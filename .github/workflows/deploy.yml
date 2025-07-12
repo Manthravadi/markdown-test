@@ -1,4 +1,4 @@
-name: Deploy Docusaurus to GitHub Pages
+name: Deploy markdown-test to GitHub Pages
 
 on:
   push:
@@ -17,13 +17,13 @@ jobs:
         with:
           node-version: 22
 
-      - name: Setup Yarn (Berry)
+      - name: Setup Corepack and Yarn Berry
         run: corepack enable
 
-      - name: Install dependencies
+      - name: Install dependencies (Yarn Berry)
         run: yarn install --immutable
 
-      - name: Build the site
+      - name: Build the Docusaurus site
         run: yarn build
 
       - name: Deploy to GitHub Pages
@@ -31,3 +31,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          publish_branch: gh-pages
+          user_name: 'manthravadi'
+          user_email: 'm.harshavardhan@gmail.com'
+          external_repository: Manthravadi/markdown-test
