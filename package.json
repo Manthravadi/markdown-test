@@ -1,6 +1,9 @@
 {
   "name": "markdown-test",
   "version": "0.0.0",
+  "license": "MIT",
+  "author": "Manthravadi Siva Harsha Vardhan",
+  "homepage": "https://manthravadi.github.io/markdown-test",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -42,6 +45,13 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Manthravadi/markdown-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Manthravadi/markdown-test/issues"
   }
 }
