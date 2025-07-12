@@ -34,4 +34,3 @@ jobs:
           publish_branch: gh-pages
           user_name: 'manthravadi'
           user_email: 'm.harshavardhan@gmail.com'
-          external_repository: Manthravadi/markdown-test
