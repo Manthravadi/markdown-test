@@ -2,7 +2,7 @@
 ## PolarFire
 
  
- <img src="Assets/Readme Assets/PolarFire FPGA Image.webp" alt="Description of Image 1" ></img>
+ <!-- <img src="Assets/Readme Assets/PolarFire FPGA Image.webp" alt="Description of Image 1" ></img>
 
 Reduce power by 50% over equivalent SRAM FPGAs. PolarFire FPGAs combine low cost and SerDes and DSP resources to satisfy a range of high-speed and compute-intensive systems constrained by low power requirements and small form factors.
 - Cost-optimized, lowest power in their class
@@ -27,4 +27,4 @@ Veritical Solutions
 
 -  [Smart Embbeded Vision](./SEV.md)
 - [Motor Control](./Motor_Control.md)
--  [Communication](./Coms.md)
+-  [Communication](./Coms.md) -->

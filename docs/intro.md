@@ -27,8 +27,8 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 
 
 <div style={{width:'100%', display:'flex', flexDirection:'row', flex: '1 1 auto', gap: 16, flexWrap:'wrap', alignItems:'center', justifyContent:'flex-start', fill:'#A1A1A1', marginTop: 64}}>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Low Power</p></div></a>
-  <a href="./security"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Security</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Low Power</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Security</p></div></a>
 </div>
 
 ---
@@ -36,21 +36,21 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 ## 🔧 Product Families
 
 <div style={{display:'flex', flexDirection:'row', flex:'1 1 auto', gap: 16, flexWrap:'wrap', fill:'#A1A1A1'}}>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire - SOC</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RT Polar Fire</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RT Polar Fire - SOC</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire Core</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Igloo</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RTG 4</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>PIC 64</p></div></a>
-  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Smart Fusion</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire - SOC</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RT Polar Fire</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RT Polar Fire - SOC</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire Core</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Igloo</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RTG 4</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>PIC 64</p></div></a>
+  <a href="./page-under-construction"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Smart Fusion</p></div></a>
 </div>
 
 ---
 
 
-##  [Mega Trends](./Mega_Trends.md)
+##  [Mega Trends](./page-under-construction.md)
 
 <div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', fill:'#A1A1A1', columnGap: 16, rowGap: 16}}>
 
@@ -58,8 +58,8 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 <Placeholder width={128} height={128} />
 <div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
 <h4>Medical</h4>
-  - [Smart Embbeded Vision](./SEV.md)
-  - [Motor Control](./Motor_Control.md)
+  - [Smart Embbeded Vision](./page-under-construction.md)
+  - [Motor Control](./page-under-construction.md)
 </div>
 </div>
 
@@ -67,9 +67,9 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 <Placeholder width={128} height={128} />
 <div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
 <h4>Industrial</h4>
-  - [Smart Embbeded Vision](./SEV.md)
-  - [Motor Control](./Motor_Control.md)
-  - [Communication](./Coms.md)
+  - [Smart Embbeded Vision](./page-under-construction.md)
+  - [Motor Control](./page-under-construction.md)
+  - [Communication](./page-under-construction.md)
 </div>
 </div>
 
@@ -77,9 +77,9 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 <Placeholder width={128} height={128} />
 <div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
 <h4>Robotics</h4>
-  - [Smart Embbeded Vision](./SEV.md)
-  - [Motor Control](./Motor_Control.md)
-  - [Communication](./Coms.md)
+  - [Smart Embbeded Vision](./page-under-construction.md)
+  - [Motor Control](./page-under-construction.md)
+  - [Communication](./page-under-construction.md)
 </div>
 </div>
 
@@ -87,7 +87,7 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 <Placeholder width={128} height={128} />
 <div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
 <h4>5G/Wireless</h4>
-  - [Communication](./Coms.md)
+  - [Communication](./page-under-construction.md)
 </div>
 </div>
 
@@ -95,8 +95,8 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 <Placeholder width={128} height={128} />
 <div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
 <h4>Aerospace</h4>
-  -  [Smart Embbeded Vision](./SEV.md)
-  -  [Motor Control](./Motor_Control.md)
+  -  [Smart Embbeded Vision](./page-under-construction.md)
+  -  [Motor Control](./page-under-construction.md)
 </div>
 </div>
 
@@ -104,7 +104,7 @@ Why FPGA: (Can we update the nameing convetion - Additionally, we can add more i
 <Placeholder width={128} height={128} />
 <div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
 <h4>IOT</h4>
-  -  [Communication](./Coms.md)
+  -  [Communication](./page-under-construction.md)
 </div>
 </div>
 
