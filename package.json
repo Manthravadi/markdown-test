@@ -56,5 +56,6 @@
   },
   "bugs": {
     "url": "https://github.com/Manthravadi/markdown-test/issues"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }
