@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmarkdown_test=self.webpackChunkmarkdown_test||[]).push([[1903],{1912:t=>{t.exports=JSON.parse('{"blogBasePath":"/markdown-test/blog","blogTitle":"Blog","authorsListPath":"/markdown-test/blog/authors"}')}}]);
