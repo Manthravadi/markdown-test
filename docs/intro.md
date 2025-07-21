@@ -1,47 +1,112 @@
 ---
 sidebar_position: 1
+title: Introduction
+hide_table_of_contents: true
 ---
 
-# Tutorial Intro
+import imgAvif from './tutorial-basics/img/photo-1.avif';
+import Placeholder from './assets/images/svg/placeholder.svg';
 
-Let's discover **Docusaurus in less than 5 minutes**.
 
-## Getting Started
+# Microchip FPGA Solutions
 
-Get started by **creating a new site**.
+Welcome to the official GitHub repository for Microchip’s Smart Embedded Solutions. This space provides everything developers and engineers need to explore, prototype, and build with Microchip’s embedded platforms.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+---
 
-### What you'll need
+## 🚀 Getting Started
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Why FPGA: (Can we update the nameing convetion - Additionally, we can add more information about the company before this section)
+* Some Information on Why we need PFGA
 
-## Generate a new site
+---
 
-Generate a new Docusaurus site using the **classic template**.
+## 📦 Why FPGA
 
-The classic template will automatically be added to your project after you run the command:
+<!-- [Hello](https://www.microchip.com/en-us/products/fpgas-and-plds/system-on-chip-fpgas/_jcr_content/root/responsivegrid/container_1117333200/image_copy_copy.coreimg.jpeg/1635409162569/210412-fpga-graph-low-power-diagram-265x1400px.jpeg)![image](https://github.com/user-attachments/assets/6d5d5768-f74c-4e26-bbd8-145b4a9dd895) -->
 
-```bash
-npm init docusaurus@latest my-website classic
-```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+<div style={{width:'100%', display:'flex', flexDirection:'row', flex: '1 1 auto', gap: 16, flexWrap:'wrap', alignItems:'center', justifyContent:'flex-start', fill:'#A1A1A1', marginTop: 64}}>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Low Power</p></div></a>
+  <a href="./security"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Security</p></div></a>
+</div>
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+---
 
-## Start your site
+## 🔧 Product Families
 
-Run the development server:
+<div style={{display:'flex', flexDirection:'row', flex:'1 1 auto', gap: 16, flexWrap:'wrap', fill:'#A1A1A1'}}>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire - SOC</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RT Polar Fire</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RT Polar Fire - SOC</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Polar Fire Core</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Igloo</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>RTG 4</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>PIC 64</p></div></a>
+  <a href="./low_power"><div style={{display:'flex', flexDirection:'column', alignItems:'center', gap: 8, justifyContent:'flex-start'}}><Placeholder width={360} height={360} /><p>Smart Fusion</p></div></a>
+</div>
 
-```bash
-cd my-website
-npm run start
-```
+---
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+##  [Mega Trends](./Mega_Trends.md)
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+<div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', fill:'#A1A1A1', columnGap: 16, rowGap: 16}}>
+
+<div style={{display:'flex', flexDirection:'row', alignItems:'center', flex:'1 1 auto', gap: 16, border: '1px solid #C4C4C4', borderRadius: 8, padding: 16}}>
+<Placeholder width={128} height={128} />
+<div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
+<h4>Medical</h4>
+  - [Smart Embbeded Vision](./SEV.md)
+  - [Motor Control](./Motor_Control.md)
+</div>
+</div>
+
+<div style={{display:'flex', alignItems:'center', flexDirection:'row', flex:'1 1 auto', gap: 16, border: '1px solid #C4C4C4', borderRadius: 8, padding: 16 }}>
+<Placeholder width={128} height={128} />
+<div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
+<h4>Industrial</h4>
+  - [Smart Embbeded Vision](./SEV.md)
+  - [Motor Control](./Motor_Control.md)
+  - [Communication](./Coms.md)
+</div>
+</div>
+
+<div style={{display:'flex', alignItems:'center', flexDirection:'row', flex:'1 1 auto', gap: 16, border: '1px solid #C4C4C4', borderRadius: 8, padding: 16}}>
+<Placeholder width={128} height={128} />
+<div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
+<h4>Robotics</h4>
+  - [Smart Embbeded Vision](./SEV.md)
+  - [Motor Control](./Motor_Control.md)
+  - [Communication](./Coms.md)
+</div>
+</div>
+
+<div style={{display:'flex', alignItems:'center', flexDirection:'row', flex:'1 1 auto', gap: 16, border: '1px solid #C4C4C4', borderRadius: 8, padding: 16}}>
+<Placeholder width={128} height={128} />
+<div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
+<h4>5G/Wireless</h4>
+  - [Communication](./Coms.md)
+</div>
+</div>
+
+<div style={{display:'flex', alignItems:'center', flexDirection:'row', flex:'1 1 auto', gap: 16, border: '1px solid #C4C4C4', borderRadius: 8, padding: 16}}>
+<Placeholder width={128} height={128} />
+<div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
+<h4>Aerospace</h4>
+  -  [Smart Embbeded Vision](./SEV.md)
+  -  [Motor Control](./Motor_Control.md)
+</div>
+</div>
+
+<div style={{display:'flex', alignItems:'center', flexDirection:'row', flex:'1 1 auto', gap: 16, border: '1px solid #C4C4C4', borderRadius: 8, padding: 16}}>
+<Placeholder width={128} height={128} />
+<div style={{display:'flex', flexDirection:'column', flex:'1 1 auto', gap: 2, alignSelf: 'flex-start'}}>
+<h4>IOT</h4>
+  -  [Communication](./Coms.md)
+</div>
+</div>
+
+</div>
+
