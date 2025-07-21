@@ -39,6 +39,9 @@ export default function Home(): ReactNode {
     //     <HomepageFeatures />
     //   </main>
     // </Layout>
-    <Redirect to={"/markdown-test/docs/intro"} />
+    <>
+      <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+      <Redirect to={"/markdown-test/docs/intro"} />
+    </>
   );
 }
