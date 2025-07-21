@@ -38,3 +38,4 @@ jobs:
           user_name: "manthravadi"
           user_email: "m.harshavardhan@gmail.com"
           force_orphan: true
+          clean: true
