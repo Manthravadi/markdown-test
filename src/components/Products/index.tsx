@@ -6,6 +6,7 @@ import type UxtTheme from "@site/src/theme/UxtTheme";
 import NextGenLandingPage from "./assets/images/Solutions.webp";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Card from "@mui/material/Card";
+import Link from "@docusaurus/Link";
 import type { CSSObject } from "tss-react";
 
 const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any, classes: Record<string, unknown>) => ({
@@ -80,7 +81,7 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
   },
   landingImage: {
     borderRadius: theme.spacing(2),
-    width: "80%",
+    width: "100%",
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
@@ -490,6 +491,7 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     ...(theme.typography.body1 as CSSObject),
   },
   megaTrendsSectionListItem: {
+    color: theme.palette.text.link,
     [`& + &`]: {
       marginTop: theme.spacing(1),
     },
@@ -498,6 +500,8 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
 
 export default function Products() {
   const { classes, cx } = useStyles();
+
+  // Imagery
   const nextGenLandingPage = useBaseUrl("/img/pages/products/Solutions.webp");
   const chooseProductsSecurityImage = useBaseUrl("/img/pages/products/choose-products/security.webp");
   const chooseProductsReliabilityImage = useBaseUrl("/img/pages/products/choose-products/reliability.webp");
@@ -512,6 +516,11 @@ export default function Products() {
   const megaTrendsSpaceImage = useBaseUrl("/img/pages/products/mega-trends/space.svg");
   const megaTrendsCommunicationsImage = useBaseUrl("/img/pages/products/mega-trends/communications.svg");
   const placeholder = useBaseUrl("/img/placeholder.svg");
+
+  // Navigation
+  const toPolarFireFPGA = useBaseUrl("/polar-fire-fpga");
+  const toPolarFireSOC = useBaseUrl("/polar-fire-soc");
+  const toRTPolarFireFPGA = useBaseUrl("/rt-polar-fire-fpga");
 
   return (
     <div className={classes.root}>
@@ -582,34 +591,40 @@ export default function Products() {
 
       <section id="section-product-families" className={cx(classes.section, classes.productFamiliesSection, classes.odd)}>
         <div className={classes.productFamiliesSectionTitleWrapper}>
-          <span className={cx(classes.productFamiliesSectionTitle, classes.titleColor)}>Why Choose Our Products?</span>
-          <span className={cx(classes.productFamiliesSectionSubTitle, classes.subTitleColor)}>Cutting-edge technology meets reliability in our embedded solutions</span>
+          <span className={cx(classes.productFamiliesSectionTitle, classes.titleColor)}>Product Families</span>
+          <span className={cx(classes.productFamiliesSectionSubTitle, classes.subTitleColor)}>Comprehensive solutions across multiple product categories</span>
         </div>
 
         <div className={classes.productFamiliesSectionCardWrapper}>
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireFPGAImage} alt="PolarFire® FPGA" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® FPGA</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>Reduce power by 50% over equivalent SRAM FPGAs.</span>
-            </div>
-          </Card>
+          <Link to={toPolarFireFPGA}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireFPGAImage} alt="PolarFire® FPGA" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® FPGA</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>Reduce power by 50% over equivalent SRAM FPGAs.</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireSOCImage} alt="PolarFire® SOC" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® SOC</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>The PolarFire SoC offers an unparalleled combination of thermal efficiency and defense-grade security to simplify the deployment of smart, connected systems.</span>
-            </div>
-          </Card>
+          <Link to={toPolarFireSOC}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireSOCImage} alt="PolarFire® SOC" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® SOC</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>The PolarFire SoC offers an unparalleled combination of thermal efficiency and defense-grade security to simplify the deployment of smart, connected systems.</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireFPGAImage} alt="RT PolarFire® FPGA" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RT PolarFire® FPGA</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire - Our flexible and easy-to-use reprogrammable radiation-tolerant PolarFire FPGAs can streamline the design of high-speed data paths within space payloads</span>
-            </div>
-          </Card>
+          <Link to={toRTPolarFireFPGA}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireFPGAImage} alt="RT PolarFire® FPGA" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RT PolarFire® FPGA</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire - Our flexible and easy-to-use reprogrammable radiation-tolerant PolarFire FPGAs can streamline the design of high-speed data paths within space payloads</span>
+              </div>
+            </Card>
+          </Link>
 
           <Card variant="outlined" className={classes.productFamiliesSectionCard}>
             <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireSOCFPGAImage} alt="RT PolarFire® SOC FPGA" />
