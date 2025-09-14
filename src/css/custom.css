@@ -15,10 +15,75 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* 100% container width for all docs pages */
+  .theme-doc-main {
+    --ifm-container-width: 100%;
+    --ifm-container-width-md: 100%;
+    --ifm-container-width-lg: 100%;
+    --ifm-container-width-xl: 100%;
+  }
+
+  /* Let the docs main container stretch and remove side paddings */
+  .theme-doc-main .container {
+    max-width: none !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Remove row gutters so content truly fills the column */
+  .theme-doc-main .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .theme-doc-main .row > .col {
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0; /* avoid overflow when flex grows */
+  }
+
+  /* ⬅️ Desktop: remove BOTH 75% caps on the content column */
+  @media (min-width: 997px) {
+    /* 1) Hashed class from theme (e.g., .docItemCol_VOVn) */
+    .theme-doc-main .row > .col[class*="docItemCol"] {
+      max-width: none !important;
+      flex-basis: auto !important;
+      flex: 1 1 auto !important; /* occupy all remaining space beside sidebar */
+    }
+    /* 2) Infima width class that also caps to 75% */
+    .theme-doc-main .row > .col.col--9 {
+      max-width: none !important;
+      flex-basis: auto !important;
+      flex: 1 1 auto !important;
+    }
+
+    /* Keep the sidebar column width stable (optional but nice) */
+    .theme-doc-sidebar-container {
+      flex: 0 0 var(--doc-sidebar-width);
+      max-width: var(--doc-sidebar-width);
+    }
+  }
+
+  /* Optional: kill vertical paddings the layout adds */
+  .theme-doc-main .padding-top--xs,
+  .theme-doc-main .padding-top--sm,
+  .theme-doc-main .padding-top--md,
+  .theme-doc-main .padding-top--lg,
+  .theme-doc-main .padding-top--xl {
+    padding-top: 0 !important;
+  }
+
+  .theme-doc-main .padding-bottom--xs,
+  .theme-doc-main .padding-bottom--sm,
+  .theme-doc-main .padding-bottom--md,
+  .theme-doc-main .padding-bottom--lg,
+  .theme-doc-main .padding-bottom--xl {
+    padding-bottom: 0 !important;
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -27,4 +92,69 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* 100% container width for all docs pages */
+  .theme-doc-main {
+    --ifm-container-width: 100%;
+    --ifm-container-width-md: 100%;
+    --ifm-container-width-lg: 100%;
+    --ifm-container-width-xl: 100%;
+  }
+
+  /* Let the docs main container stretch and remove side paddings */
+  .theme-doc-main .container {
+    max-width: none !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Remove row gutters so content truly fills the column */
+  .theme-doc-main .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .theme-doc-main .row > .col {
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0; /* avoid overflow when flex grows */
+  }
+
+  /* ⬅️ Desktop: remove BOTH 75% caps on the content column */
+  @media (min-width: 997px) {
+    /* 1) Hashed class from theme (e.g., .docItemCol_VOVn) */
+    .theme-doc-main .row > .col[class*="docItemCol"] {
+      max-width: none !important;
+      flex-basis: auto !important;
+      flex: 1 1 auto !important; /* occupy all remaining space beside sidebar */
+    }
+    /* 2) Infima width class that also caps to 75% */
+    .theme-doc-main .row > .col.col--9 {
+      max-width: none !important;
+      flex-basis: auto !important;
+      flex: 1 1 auto !important;
+    }
+
+    /* Keep the sidebar column width stable (optional but nice) */
+    .theme-doc-sidebar-container {
+      flex: 0 0 var(--doc-sidebar-width);
+      max-width: var(--doc-sidebar-width);
+    }
+  }
+
+  /* Optional: kill vertical paddings the layout adds */
+  .theme-doc-main .padding-top--xs,
+  .theme-doc-main .padding-top--sm,
+  .theme-doc-main .padding-top--md,
+  .theme-doc-main .padding-top--lg,
+  .theme-doc-main .padding-top--xl {
+    padding-top: 0 !important;
+  }
+
+  .theme-doc-main .padding-bottom--xs,
+  .theme-doc-main .padding-bottom--sm,
+  .theme-doc-main .padding-bottom--md,
+  .theme-doc-main .padding-bottom--lg,
+  .theme-doc-main .padding-bottom--xl {
+    padding-bottom: 0 !important;
+  }
 }

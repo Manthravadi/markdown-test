@@ -1,148 +1,91 @@
 import { themes as prismThemes } from "prism-react-renderer";
-import type { Config } from "@docusaurus/types";
+import type { Config, Plugin } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import path from "path";
+import { fileURLToPath } from "url";
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function aliasPlugin(): Plugin {
+  return {
+    name: "alias-plugin",
+    configureWebpack() {
+      return {
+        resolve: {
+          alias: {
+            "@components": path.resolve(__dirname, "src/components"),
+          },
+        },
+      };
+    },
+  };
+}
 
 const config: Config = {
-  title: "My Site",
+  title: "Products",
   tagline: "Dinosaurs are cool",
   favicon: "img/favicon.ico",
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
+  headTags: [
+    { tagName: "link", attributes: { rel: "preconnect", href: "https://fonts.googleapis.com" } },
+    { tagName: "link", attributes: { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" } },
+    { tagName: "meta", attributes: { name: "emotion-insertion-point" } },
+  ],
+  stylesheets: ["https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"],
 
-  // Set the production url of your site here
-  // url: 'https://your-docusaurus-site.example.com',
   url: "https://manthravadi.github.io",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/markdown-test/",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "manthravadi", // Usually your GitHub org/user name.
-  projectName: "markdown-test", // Usually your repo name.
+  organizationName: "manthravadi",
+  projectName: "markdown-test",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
-  },
+  i18n: { defaultLocale: "en", locales: ["en"] },
+  future: { v4: true },
 
   presets: [
     [
       "classic",
       {
         docs: {
+          breadcrumbs: false,
+          routeBasePath: "/", // docs ARE the homepage
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          // editUrl: "https://github.com/Manthravadi/markdown-test/edit/main/",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
-        theme: {
-          customCss: "./src/css/custom.css",
-        },
+        blog: false,
+        theme: { customCss: "./src/css/custom.css" },
       } satisfies Preset.Options,
     ],
   ],
 
+  plugins: [require.resolve("./src/plugins/webpack-avif-webp-loader"), aliasPlugin],
+
   themeConfig: {
-    // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    colorMode: { defaultMode: "light", respectPrefersColorScheme: false, disableSwitch: true },
+    docs: {
+      sidebar: { hideable: true, autoCollapseCategories: true },
+    },
     navbar: {
-      title: "FPGA",
+      // title: "Products",
+      items: [{ type: "docSidebar", sidebarId: "tutorialSidebar", label: "Products", position: "left", className: "nav-center" }],
       logo: {
-        alt: "My Site Logo",
-        src: "img/microchip.avif",
+        alt: "Microchip",
+        src: "img/logos/microchip-fpga.png",
       },
-      items: [
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Documentation",
-        },
-        // { to: '/blog', label: 'Blog', position: 'left' },
-        {
-          href: "https://github.com/Manthravadi/markdown-test",
-          label: "GitHub",
-          position: "right",
-        },
-      ],
     },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-    },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
-    plugins: [require("./src/plugins/webpack-avif-webp-loader")],
-  } satisfies Preset.ThemeConfig,
+    // footer: {
+    //   style: "dark",
+    //   links: [
+    //     { title: "Docs", items: [{ label: "Home", to: "/" }] },
+    //     { title: "More", items: [{ label: "GitHub", href: "https://github.com/Manthravadi/markdown-test" }] },
+    //   ],
+    //   copyright: `Copyright © ${new Date().getFullYear()} My Project`,
+    // },
+    prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+  },
 };
 
 export default config;
