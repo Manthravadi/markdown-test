@@ -2,7 +2,12 @@
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "types": ["@docusaurus/module-type-aliases"]
   },
+  "include": ["src", "docs", "docusaurus.config.ts", "sidebars.ts", "src/types/**/*.d.ts"],
   "exclude": [".docusaurus", "build"]
 }
