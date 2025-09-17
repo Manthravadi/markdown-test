@@ -299,19 +299,23 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     justifyItems: "stretch",
 
     // responsive fallbacks
+    // Guard tiny widths if the container shrinks
+    "& > *": { minWidth: 0 }, // avoid overflow from long text
+
     [theme.breakpoints.down("md")]: {
-      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gridTemplateColumns: "repeat(2, minmax(280px, 1fr))", // give each card breathing room
     },
     [theme.breakpoints.down("sm")]: {
-      gridTemplateColumns: "1fr",
+      gridTemplateColumns: "minmax(260px, 1fr)",
     },
   },
 
   productFamiliesSectionCard: {
     width: "100%",
-    height: "100%",
+    height: "100%", 
     display: "flex",
     flexDirection: "column",
+    flex: "0 0 auto",
 
     overflow: "hidden",
     borderRadius: theme.spacing(2),
@@ -331,13 +335,27 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     "@media (hover: none)": { "&:hover img": { transform: "none" } },
   },
 
+  productFamiliesSectionCardMedia: {
+    position: "relative",
+    width: "100%",
+    aspectRatio: "16 / 9", // stable, responsive ratio
+    overflow: "hidden",
+    borderTopLeftRadius: "inherit",
+    borderTopRightRadius: "inherit",
+
+    // optional: slightly taller on small screens
+    [theme.breakpoints.down("sm")]: {
+      aspectRatio: "4 / 3",
+    },
+  },
+
   // (optional) keep thumbnails consistent
   productFamiliesSectionCardImage: {
-    height: 400, // your current quick fix
-    objectFit: "cover", // keep aspect ratio, crop overflow
-    objectPosition: "center",
+    width: "100%",
+    height: "100%", // <-- fill the media box
     display: "block",
-    aspectRatio: "16 / 9",
+    objectFit: "cover", // 🔑 fill without distortion
+    objectPosition: "center",
     transformOrigin: "center center",
     transition: "transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1)",
     backfaceVisibility: "hidden",
@@ -348,7 +366,7 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     display: "flex",
     flexDirection: "column",
     flex: "1 1 auto",
-    justifyContent: "center",
+    justifyContent: "flex-start", // ⬅️ k
     height: "auto",
     width: "100%",
     gap: theme.spacing(2),
@@ -357,6 +375,8 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
   productFamiliesSectionCardTitle: {
     ...(theme.typography.h6 as CSSObject),
     fontWeight: 600,
+    margin: 0,
+    display: "block",
   },
   productFamiliesSectionCardSubTitle: {
     ...(theme.typography.body1 as CSSObject),
@@ -617,7 +637,9 @@ export default function Products() {
         <div className={classes.productFamiliesSectionCardWrapper}>
           <Link to={toPolarFireFPGA}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireFPGAImage} alt="PolarFire® FPGA" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireFPGAImage} alt="PolarFire® FPGA" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® FPGA</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>Reduce power by 50% over equivalent SRAM FPGAs.</span>
@@ -627,7 +649,9 @@ export default function Products() {
 
           <Link to={toPolarFireSOCFPGA}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireSOCImage} alt="PolarFire® SOC FPGA" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireSOCImage} alt="PolarFire® SOC FPGA" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® SOC FPGA</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>The PolarFire SoC offers an unparalleled combination of thermal efficiency and defense-grade security to simplify the deployment of smart, connected systems.</span>
@@ -637,7 +661,9 @@ export default function Products() {
 
           <Link to={toRTPolarFireFPGA}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireFPGAImage} alt="RT PolarFire® FPGA" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireFPGAImage} alt="RT PolarFire® FPGA" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RT PolarFire® FPGA</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire - Our flexible and easy-to-use reprogrammable radiation-tolerant PolarFire FPGAs can streamline the design of high-speed data paths within space payloads</span>
@@ -647,7 +673,9 @@ export default function Products() {
 
           <Link to={toRTPolarFireSOCFPGA}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireSOCFPGAImage} alt="RT PolarFire® SOC FPGA" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireSOCFPGAImage} alt="RT PolarFire® SOC FPGA" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RT PolarFire® SOC FPGA</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire SOC FPGA - Designed to enable high-performance data processing, our radiation-tolerant PolarFire SoC FPGA is the industry's first embedded, real-time, Linux®-capable, RISC-V®-based Microprocessor Subsystem (MSS) on the flight-proven RT PolarFire FPGA fabric.</span>
@@ -657,7 +685,9 @@ export default function Products() {
 
           <Link to={toPIC64GX}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPic64Image} alt="PIC64GX" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPic64Image} alt="PIC64GX" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PIC64GX</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>The PIC64GX microprocessor (MPU) is a 64-bit Linux® Operating System (OS)-capable processor that provides an innovative, mid-range, embedded compute platform that is based on the RISC-V® Instruction Set Architecture (ISA).</span>
@@ -667,7 +697,9 @@ export default function Products() {
 
           <Link to={toSmartFusion2}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliriesSmartFusion2FPGAImage} alt="SmartFusion® 2" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliriesSmartFusion2FPGAImage} alt="SmartFusion® 2" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>SmartFusion® 2</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>SmartFusion® 2 Optimize design size and power consumption using these low-density, low-power devices</span>
@@ -677,7 +709,9 @@ export default function Products() {
 
           <Link to={toIGLOO2}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesIGLOO2Image} alt="IGLOO 2" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliesIGLOO2Image} alt="IGLOO 2" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>IGLOO 2</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>IGLOO - Improve design integration with low-density IGLOO 2 devices that give you more resources than other FPGAs in their class.</span>
@@ -687,7 +721,9 @@ export default function Products() {
 
           <Link to={toRTG4FPGA}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTG4FPGA2Image} alt="RTG4™ FPGA" />
+              <div className={classes.productFamiliesSectionCardMedia}>
+                <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTG4FPGA2Image} alt="RTG4™ FPGA" />
+              </div>
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RTG4™ FPGA</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>Our RTG4 FPGAs can implement designs for harsh radiation environments such as space flights.</span>
