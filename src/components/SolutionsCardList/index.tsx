@@ -44,7 +44,6 @@ const SolutionsCardList = React.forwardRef<HTMLDivElement, SolutionsCardListProp
   const { className, classes: classesProp, solutionCategories = [], ...rest } = props;
   const { classes, cx } = useStyles(props, { props: { classes: classesProp } });
 
-  console.log(solutionCategories);
   return (
     <div className={cx(classes.root, className)}>
       {solutionCategories.map((solutionCategory: SolutionCategory) => (

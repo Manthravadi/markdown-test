@@ -650,7 +650,7 @@ export default function Products() {
               <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireSOCFPGAImage} alt="RT PolarFire® SOC FPGA" />
               <div className={classes.productFamiliesSectionCardTextWrapper}>
                 <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RT PolarFire® SOC FPGA</span>
-                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire SOC - Designed to enable high-performance data processing, our radiation-tolerant PolarFire SoC FPGA is the industry's first embedded, real-time, Linux®-capable, RISC-V®-based Microprocessor Subsystem (MSS) on the flight-proven RT PolarFire FPGA fabric.</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire SOC FPGA - Designed to enable high-performance data processing, our radiation-tolerant PolarFire SoC FPGA is the industry's first embedded, real-time, Linux®-capable, RISC-V®-based Microprocessor Subsystem (MSS) on the flight-proven RT PolarFire FPGA fabric.</span>
               </div>
             </Card>
           </Link>
