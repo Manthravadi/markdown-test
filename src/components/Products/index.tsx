@@ -186,7 +186,7 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     alignItems: "stretch",
 
     [theme.breakpoints.up("md")]: {
-      gridTemplateColumns: "repeat(2, minmax(0, 40%))", // two columns @ ~40% each
+      gridTemplateColumns: "repeat(3, minmax(320px, 1fr))", // two columns @ ~40% each
     },
   },
 
@@ -402,12 +402,13 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
 
     // ✅ default: 3 columns → with 9 items = 3 rows naturally
     gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    gridTemplateRows: "repeat(2, minmax(0, 200px))",
 
     columnGap: theme.spacing(4),
     rowGap: theme.spacing(3),
     alignItems: "stretch",
     justifyItems: "stretch",
-
+    gridAutoRows: 200,
     // responsive fallbacks
     [theme.breakpoints.down("md")]: {
       gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
@@ -505,22 +506,32 @@ export default function Products() {
   const nextGenLandingPage = useBaseUrl("/img/pages/products/Solutions.webp");
   const chooseProductsSecurityImage = useBaseUrl("/img/pages/products/choose-products/security.webp");
   const chooseProductsReliabilityImage = useBaseUrl("/img/pages/products/choose-products/reliability.webp");
+  const chooseProductsLowPowerImage = useBaseUrl("/img/pages/products/choose-products/low-power.webp");
   const productFamiliesPolarFireFPGAImage = useBaseUrl("/img/pages/products/product-families/polarfire-fpga.avif");
   const productFamiliesPolarFireSOCImage = useBaseUrl("/img/pages/products/product-families/polarfire-soc.avif");
   const productFamiliesRTPolarFireFPGAImage = useBaseUrl("/img/pages/products/product-families/rt-polarfire-fpga.avif");
   const productFamiliesRTPolarFireSOCFPGAImage = useBaseUrl("/img/pages/products/product-families/rt-polarfire-soc-fpga.avif");
-  const productFamiliesPic64Image = useBaseUrl("/img/pages/products/product-families/pic64.webp");
+  const productFamiliriesSmartFusion2FPGAImage = useBaseUrl("/img/pages/products/product-families/smartfusion2-fpga.png");
+  const productFamiliesPic64Image = useBaseUrl("/img/pages/products/product-families/pic64gx-mpu.png");
   const productFamiliesIGLOO2Image = useBaseUrl("/img/pages/products/product-families/igloo2.avif");
   const productFamiliesRTG4FPGA2Image = useBaseUrl("/img/pages/products/product-families/rtg4-fpga.avif");
   const megaTrendsMedicalImage = useBaseUrl("/img/pages/products/mega-trends/medical.png");
   const megaTrendsSpaceImage = useBaseUrl("/img/pages/products/mega-trends/space.svg");
-  const megaTrendsCommunicationsImage = useBaseUrl("/img/pages/products/mega-trends/communications.svg");
+  const megaTrendsCommunicationsImage = useBaseUrl("/img/pages/products/mega-trends/communications.png");
+  const megaTrendsIndustrialImage = useBaseUrl("/img/pages/products/mega-trends/iot.svg");
+  const megaTrendsAerospaceAndDefenseImage = useBaseUrl("/img/pages/products/mega-trends/aerospace-defense.png");
+  const megaTrendsAutoImage = useBaseUrl("/img/pages/products/mega-trends/auto.svg");
   const placeholder = useBaseUrl("/img/placeholder.svg");
 
   // Navigation
   const toPolarFireFPGA = useBaseUrl("/polar-fire-fpga");
-  const toPolarFireSOC = useBaseUrl("/polar-fire-soc");
+  const toPolarFireSOCFPGA = useBaseUrl("/polar-fire-soc-fpga");
   const toRTPolarFireFPGA = useBaseUrl("/rt-polar-fire-fpga");
+  const toRTPolarFireSOCFPGA = useBaseUrl("/rt-polar-fire-soc-fpga");
+  const toPIC64GX = useBaseUrl("/pic-64-gx");
+  const toSmartFusion2 = useBaseUrl("/smart-fusion-2");
+  const toIGLOO2 = useBaseUrl("/igloo-2");
+  const toRTG4FPGA = useBaseUrl("/rtg-4-fpga");
 
   return (
     <div className={classes.root}>
@@ -572,6 +583,14 @@ export default function Products() {
 
         <div className={classes.chooseProductsSectionCardWrapper}>
           <Card variant="outlined" className={classes.chooseProductsSectionCard}>
+            <img className={classes.chooseProductsSectionCardImage} src={chooseProductsLowPowerImage} alt="Low Power" />
+            <div className={classes.chooseProductsSectionCardTextWrapper}>
+              <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Low Power</span>
+              <span className={cx(classes.subTitleColor, classes.chooseProductsSectionCardSubTitle)}>Microchip FPGAs and SoC FPGAs consume up to 50% lower total power than competitive FPGAs. Our nonvolatile process delivers FPGA families that are live at power-up with minimal in-rush current, and significantly lower leakage than SRAM-based alternatives.</span>
+            </div>
+          </Card>
+
+          <Card variant="outlined" className={classes.chooseProductsSectionCard}>
             <img className={classes.chooseProductsSectionCardImage} src={chooseProductsSecurityImage} alt="Security" />
             <div className={classes.chooseProductsSectionCardTextWrapper}>
               <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Security</span>
@@ -606,11 +625,11 @@ export default function Products() {
             </Card>
           </Link>
 
-          <Link to={toPolarFireSOC}>
+          <Link to={toPolarFireSOCFPGA}>
             <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireSOCImage} alt="PolarFire® SOC" />
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPolarFireSOCImage} alt="PolarFire® SOC FPGA" />
               <div className={classes.productFamiliesSectionCardTextWrapper}>
-                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® SOC</span>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PolarFire® SOC FPGA</span>
                 <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>The PolarFire SoC offers an unparalleled combination of thermal efficiency and defense-grade security to simplify the deployment of smart, connected systems.</span>
               </div>
             </Card>
@@ -626,45 +645,55 @@ export default function Products() {
             </Card>
           </Link>
 
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireSOCFPGAImage} alt="RT PolarFire® SOC FPGA" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RT PolarFire® SOC FPGA</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire SOC - Designed to enable high-performance data processing, our radiation-tolerant PolarFire SoC FPGA is the industry's first embedded, real-time, Linux®-capable, RISC-V®-based Microprocessor Subsystem (MSS) on the flight-proven RT PolarFire FPGA fabric.</span>
-            </div>
-          </Card>
+          <Link to={toRTPolarFireSOCFPGA}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireSOCFPGAImage} alt="RT PolarFire® SOC FPGA" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RT PolarFire® SOC FPGA</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>RT PolarFire SOC - Designed to enable high-performance data processing, our radiation-tolerant PolarFire SoC FPGA is the industry's first embedded, real-time, Linux®-capable, RISC-V®-based Microprocessor Subsystem (MSS) on the flight-proven RT PolarFire FPGA fabric.</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPic64Image} alt="Pic64" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>Pic64</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>The PIC64GX microprocessor (MPU) is a 64-bit Linux® Operating System (OS)-capable processor that provides an innovative, mid-range, embedded compute platform that is based on the RISC-V® Instruction Set Architecture (ISA).</span>
-            </div>
-          </Card>
+          <Link to={toPIC64GX}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesPic64Image} alt="PIC64GX" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>PIC64GX</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>The PIC64GX microprocessor (MPU) is a 64-bit Linux® Operating System (OS)-capable processor that provides an innovative, mid-range, embedded compute platform that is based on the RISC-V® Instruction Set Architecture (ISA).</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTPolarFireSOCFPGAImage} alt="SmartFusion® 2" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>SmartFusion® 2</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>SmartFusion® 2 Optimize design size and power consumption using these low-density, low-power devices</span>
-            </div>
-          </Card>
+          <Link to={toSmartFusion2}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliriesSmartFusion2FPGAImage} alt="SmartFusion® 2" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>SmartFusion® 2</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>SmartFusion® 2 Optimize design size and power consumption using these low-density, low-power devices</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesIGLOO2Image} alt="IGLOO 2" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>IGLOO 2</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>IGLOO - Improve design integration with low-density IGLOO 2 devices that give you more resources than other FPGAs in their class.</span>
-            </div>
-          </Card>
+          <Link to={toIGLOO2}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesIGLOO2Image} alt="IGLOO 2" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>IGLOO 2</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>IGLOO - Improve design integration with low-density IGLOO 2 devices that give you more resources than other FPGAs in their class.</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.productFamiliesSectionCard}>
-            <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTG4FPGA2Image} alt="RTG4™ FPGA" />
-            <div className={classes.productFamiliesSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RTG4™ FPGA</span>
-              <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>Our RTG4 FPGAs can implement designs for harsh radiation environments such as space flights.</span>
-            </div>
-          </Card>
+          <Link to={toRTG4FPGA}>
+            <Card variant="outlined" className={classes.productFamiliesSectionCard}>
+              <img className={classes.productFamiliesSectionCardImage} src={productFamiliesRTG4FPGA2Image} alt="RTG4™ FPGA" />
+              <div className={classes.productFamiliesSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.productFamiliesSectionCardTitle)}>RTG4™ FPGA</span>
+                <span className={cx(classes.subTitleColor, classes.productFamiliesSectionCardSubTitle)}>Our RTG4 FPGAs can implement designs for harsh radiation environments such as space flights.</span>
+              </div>
+            </Card>
+          </Link>
         </div>
       </section>
 
@@ -711,9 +740,57 @@ export default function Products() {
               <div className={classes.landingPageTextListItem}>
                 <img src={megaTrendsCommunicationsImage} width={64} height={64} />
                 <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
-                  <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Communications</span>
+                  <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>COMMS 10-100G, Optical & 5G</span>
                   <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
                     <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <Card variant="outlined" className={classes.megaTrendsSectionCard}>
+            <div className={classes.landingTextList}>
+              <div className={classes.landingPageTextListItem}>
+                <img src={megaTrendsAerospaceAndDefenseImage} width={64} height={64} />
+                <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
+                  <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Aerospace & Defense</span>
+                  <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
+                    <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
+                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <Card variant="outlined" className={classes.megaTrendsSectionCard}>
+            <div className={classes.landingTextList}>
+              <div className={classes.landingPageTextListItem}>
+                <img src={megaTrendsIndustrialImage} width={64} height={64} />
+                <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
+                  <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Industrial</span>
+                  <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
+                    <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
+                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <Card variant="outlined" className={classes.megaTrendsSectionCard}>
+            <div className={classes.landingTextList}>
+              <div className={classes.landingPageTextListItem}>
+                <img src={megaTrendsAutoImage} width={64} height={64} />
+                <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
+                  <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Auto</span>
+                  <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
+                    <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
+                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
                   </ul>
                 </div>
               </div>
