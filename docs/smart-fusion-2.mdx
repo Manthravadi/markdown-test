@@ -10,18 +10,15 @@ full_width: true
 slug: /smart-fusion-2
 ---
 import SolutionsCardList from '@components/SolutionsCardList';
+import PageBanner from '@components/PageBanner';
 
-# SmartFusion 2
-
-![Polar Fire FPGA](/img/pages/smart-fusion-2/smart-fusion-2-banner.png "SmartFusion 2")
-<br />
-
+<PageBanner imgSrc="/img/pages/smart-fusion-2/smart-fusion-2-banner.png" altText="SmartFusion 2">
 Optimize design size and power consumption using these low-density, low-power devices. SmartFusion 2 SoC FPGAs bring proven security and exceptional reliability to communications, industrial, medical, defense and aviation applications.
-
  - 166 MHz Arm® Cortex®-M3 based microprocessor with instruction cache
  - Up to 150K LEs with 5 MB SRAM and 4.5 MB NVM
  - 5 Gbps SerDes, PCIe®, XAUI/XGXS+
  - Native SerDes
  - DDR2/3 controllers with SECDED
-
-<SolutionsCardList solutionCategories={[{titleText:"Why SmartFusion 2?", solutions: ["Low Power","Security","Vulnerability"]}, {titleText:"Performance", solutions: ["DSP","DSR","DDR","Transceivers","MiV","System Services"]},{titleText:"Intelligent Edge", solutions: ["Smart Embedded Vision","Edge Connectivity","Industrial Edge"]}]}/>
+ </PageBanner>
+<br />
+<SolutionsCardList solutionCategories={[{titleText:"Why SmartFusion 2?", imgUrl:"/img/pages/common/chip.svg", solutions: [{text: "Low Power", url: "https://github.com/bnkcreativelab/sample-repository/blob/main/low-power.md" },{text: "Security", url: undefined},{text: "Reliability", url: undefined}]}, {titleText:"Performance", imgUrl:"/img/pages/common/performance.svg", solutions: [{text: "DSP", url: undefined}, {text: "DSR", url: undefined}, {text: "DDR", url: undefined}, {text: "Transceivers", url: undefined}, {text: "MiV", url: undefined}, {text: "System Services", url: undefined}]},{titleText:"Intelligent Edge", imgUrl:"/img/pages/common/intelligent-edge.svg", solutions: [{text: "Smart Embedded Vision", url: undefined},{text: "Edge Connectivity", url: undefined}, {text: "Industrial Edge", url: undefined}]}]}/>

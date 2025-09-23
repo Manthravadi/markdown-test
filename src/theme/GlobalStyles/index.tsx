@@ -38,6 +38,11 @@ const ScopedStyles = function ScopedStyles(props: ScopedStylesProps) {
             MozOsxFontSmoothing: "grayscale",
             backgroundColor: theme.palette.background.paper,
           },
+          ul: { paddingTop: theme.spacing(2) },
+          ol: { paddingTop: theme.spacing(2) },
+          li: {
+            [`& + &`]: { paddingTop: theme.spacing(1) },
+          },
 
           // 3) antialiasing
           html: {
@@ -71,6 +76,10 @@ const ScopedStyles = function ScopedStyles(props: ScopedStylesProps) {
             ".navbar .navbar__link:hover, .navbar .navbar__link--active": {
               color: "var(--ifm-navbar-link-hover-color) !important",
             },
+
+            /** Sidebar vars */
+            "--doc-sidebar-width": 340,
+            "--doc-sidebar-hidden-width": 48,
 
             /* Mobile sidebar/drawer to match your theme */
             ".navbar-sidebar": {

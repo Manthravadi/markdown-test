@@ -3,7 +3,6 @@ import * as React from "react";
 import { alpha, Box, Typography } from "@mui/material";
 import makeStyles from "@site/src/helpers/makeStyles";
 import type UxtTheme from "@site/src/theme/UxtTheme";
-import NextGenLandingPage from "./assets/images/Solutions.webp";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Card from "@mui/material/Card";
 import Link from "@docusaurus/Link";
@@ -78,6 +77,10 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
   },
   landingImagery: {
     // place imagery rules here (e.g., maxWidth)
+    display: "flex",
+    flex: "1 1 auto",
+    alignItems: "center",
+    justifyContent: "flex-end",
   },
   landingImage: {
     borderRadius: theme.spacing(2),
@@ -90,7 +93,7 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     gap: theme.spacing(2),
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(2),
@@ -312,13 +315,13 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
 
   productFamiliesSectionCard: {
     width: "100%",
-    height: "100%", 
+    height: "100%",
     display: "flex",
     flexDirection: "column",
     flex: "0 0 auto",
 
     overflow: "hidden",
-    borderRadius: theme.spacing(2),
+    borderRadius: theme.spacing(4.5),
     cursor: "pointer",
     transition: "box-shadow 220ms ease, transform 220ms ease",
     willChange: "box-shadow, transform",
@@ -335,30 +338,46 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     "@media (hover: none)": { "&:hover img": { transform: "none" } },
   },
 
+  // productFamiliesSectionCardMedia: {
+  //   position: "relative",
+  //   width: "100%",
+  //   aspectRatio: "16 / 9", // stable, responsive ratio
+  //   overflow: "hidden",
+  //   borderTopLeftRadius: "inherit",
+  //   borderTopRightRadius: "inherit",
+  //   paddingBlock: 16,
+
+  //   // optional: slightly taller on small screens
+  //   [theme.breakpoints.down("sm")]: {
+  //     aspectRatio: "4 / 3",
+  //   },
+  // },
+
+  // // (optional) keep thumbnails consistent
+  // productFamiliesSectionCardImage: {
+  //   width: "100%",
+  //   height: "100%", // <-- fill the media box
+  //   display: "block",
+  //   objectFit: "contain", // 🔑 fill without distortion
+  //   objectPosition: "center",
+  //   transformOrigin: "center center",
+  //   transition: "transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1)",
+  //   backfaceVisibility: "hidden",
+  // },
+
   productFamiliesSectionCardMedia: {
     position: "relative",
     width: "100%",
-    aspectRatio: "16 / 9", // stable, responsive ratio
     overflow: "hidden",
     borderTopLeftRadius: "inherit",
     borderTopRightRadius: "inherit",
-
-    // optional: slightly taller on small screens
-    [theme.breakpoints.down("sm")]: {
-      aspectRatio: "4 / 3",
-    },
+    // ❌ remove aspectRatio
   },
 
-  // (optional) keep thumbnails consistent
   productFamiliesSectionCardImage: {
     width: "100%",
-    height: "100%", // <-- fill the media box
+    height: "auto", // ⬅️ natural height
     display: "block",
-    objectFit: "cover", // 🔑 fill without distortion
-    objectPosition: "center",
-    transformOrigin: "center center",
-    transition: "transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1)",
-    backfaceVisibility: "hidden",
   },
 
   productFamiliesSectionCardTextWrapper: {
@@ -541,6 +560,7 @@ export default function Products() {
   const megaTrendsIndustrialImage = useBaseUrl("/img/pages/products/mega-trends/iot.svg");
   const megaTrendsAerospaceAndDefenseImage = useBaseUrl("/img/pages/products/mega-trends/aerospace-defense.png");
   const megaTrendsAutoImage = useBaseUrl("/img/pages/products/mega-trends/auto.svg");
+  const microchipLogo = useBaseUrl("/img/logos/microchip.avif");
   const placeholder = useBaseUrl("/img/placeholder.svg");
 
   // Navigation
@@ -558,11 +578,12 @@ export default function Products() {
       <section id="section-landing" className={cx(classes.section, classes.landingSection, classes.odd)}>
         <div className={cx(classes.landingHalf)}>
           <div className={cx(classes.landingTextualContent, classes.landingTitle)}>
-            <span className={classes.landingMainTitleFirstLineText}>Next-Generation</span>
-            <span className={classes.landingMainTitleSecondLineText}>Embedded Solutions</span>
+            <img src={microchipLogo} />
+            <span className={classes.landingMainTitleFirstLineText}>FPGA Solutions</span>
+            <span className={classes.landingMainTitleSecondLineText}>Intelligent Edge</span>
             <span className={classes.landingSubTitleText}>Power your innovations with our cutting-edge embedded systems designed for industrial automation, medical devices, and robotics applications.</span>
             <br />
-            <div className={classes.landingTextList}>
+            {/* <div className={classes.landingTextList}>
               <div className={classes.landingPageTextListItem}>
                 <img src={placeholder} width={36} height={36} />
                 <div className={classes.landingPageTextListItemTextWrapper}>
@@ -584,7 +605,7 @@ export default function Products() {
                   <span className={cx(classes.landingPageTextListItemTitleContent, classes.subTitleColor)}>Built-in security features and encryption Get Started</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

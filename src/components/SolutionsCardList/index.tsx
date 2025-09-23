@@ -2,10 +2,11 @@ import React from "react";
 import makeStyles from "@site/src/helpers/makeStyles";
 import type UxtTheme from "@site/src/theme/UxtTheme";
 import SolutionsCard from "../SolutionsCard";
+import { Solution } from "@site/src/types";
 
 export interface SolutionCategory {
   titleText?: string;
-  solutions?: Array<string>;
+  solutions?: Array<Solution>;
   imgUrl?: string;
 }
 
@@ -23,13 +24,13 @@ const useStyles = makeStyles<SolutionsCardListProps>({ name: "MicrochipFPGASolut
 
     // ✅ default: 3 columns → with 9 items = 3 rows naturally
     gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-    gridTemplateRows: "repeat(2, minmax(0, 200px))",
+    gridTemplateRows: "repeat(2, minmax(0, 240px))",
 
     columnGap: theme.spacing(4),
     rowGap: theme.spacing(3),
     alignItems: "stretch",
     justifyItems: "stretch",
-    gridAutoRows: 200,
+    gridAutoRows: 240,
     // responsive fallbacks
     [theme.breakpoints.down("md")]: {
       gridTemplateColumns: "repeat(2, minmax(0, 1fr))",

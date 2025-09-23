@@ -9,22 +9,16 @@ wrapperClassName: products-fullbleed
 full_width: true
 slug: /polar-fire-fpga
 ---
-
-
 import SolutionsCardList from '@components/SolutionsCardList';
+import PageBanner from '@components/PageBanner';
 
-
-![PolarFire FPGA](/img/pages/polar-fire-fpga/polar-fire-fpga-banner.png "Pola Fire FPGA")
-<br />
+<PageBanner imgSrc="/img/pages/polar-fire-fpga/polar-fire-fpga-banner.png" altText="PolarFire FPGA">
 Reduce power by 50% over equivalent SRAM FPGAs. PolarFire FPGAs combine low cost and SerDes and DSP resources to satisfy a range of high-speed and compute-intensive systems constrained by low power requirements and small form factors
 
 - Cost-optimized, lowest power in their class
 - 250 Mbps to 12.7 Gbps transceivers
 - 100K to 500K Logic Elements (LEs), up to 33 MB of RAM
 - Best-in-class security and exceptional reliability
-
+</PageBanner>
 <br />
-
-<SolutionsCardList solutionCategories={[{titleText:"Why PolarFire FPGA?", solutions: ["Low Power","Security","Vulnerability"]}, {titleText:"Performance", solutions: ["DSP","DSR","DDR","Transceivers","MiV","System Services"]},{titleText:"Intelligent Edge", solutions: ["Smart Embedded Vision","Edge Connectivity","Industrial Edge"]}]}/>
-
-
+<SolutionsCardList solutionCategories={[{titleText:"Why PolarFire FPGA?", imgUrl:"/img/pages/common/chip.svg", solutions: [{text: "Low Power", url: "https://github.com/bnkcreativelab/sample-repository/blob/main/low-power.md" },{text: "Security", url: undefined},{text: "Reliability", url: undefined}]}, {titleText:"Performance", imgUrl:"/img/pages/common/performance.svg", solutions: [{text: "DSP", url: undefined}, {text: "DSR", url: undefined}, {text: "DDR", url: undefined}, {text: "Transceivers", url: undefined}, {text: "MiV", url: undefined}, {text: "System Services", url: undefined}]},{titleText:"Intelligent Edge", imgUrl:"/img/pages/common/intelligent-edge.svg", solutions: [{text: "Smart Embedded Vision", url: undefined},{text: "Edge Connectivity", url: undefined}, {text: "Industrial Edge", url: undefined}]}]}/>

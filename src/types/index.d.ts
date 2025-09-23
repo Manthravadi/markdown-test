@@ -26,3 +26,8 @@ declare module "*.avif" {
   const src: string;
   export default src;
 }
+
+export interface Solution {
+  text?: string;
+  url?: string;
+}
