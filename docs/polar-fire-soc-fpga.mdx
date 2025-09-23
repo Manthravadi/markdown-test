@@ -10,16 +10,14 @@ full_width: true
 slug: /polar-fire-soc-fpga
 ---
 import SolutionsCardList from '@components/SolutionsCardList';
+import PageBanner from '@components/PageBanner';
 
-# PolarFire SOC FPGA
-
-![PolarFire SOC FPGA](/img/pages/polar-fire-soc-fpga/polar-fire-soc-fpga-banner.png "PolarFire SOC FPGA")
-<br />
-
+<PageBanner imgSrc="/img/pages/polar-fire-soc-fpga/polar-fire-soc-fpga-banner.png" altText="PolarFire SOC FPGA">
 If you need to run Linux or a real-time operation on a chip, the PolarFire SoC offers an unparalleled combination of thermal efficiency and defense-grade security to simplify the deployment of smart, connected systems.
- - Deterministic, coherent 64-bit multi-core RISC-V CPU
- - 25K to 460K Logical Elements (LEs)
- - Up to 50% lower power than alternatives
- - Integrated DDR3/4, LPDDR3/4 controller and PHY
-
-<SolutionsCardList solutionCategories={[{titleText:"Why PolarFire SOC FPGA?", solutions: ["Low Power","Security","Vulnerability"]}, {titleText:"Performance", solutions: ["DSP","DSR","DDR","Transceivers","MiV","System Services"]},{titleText:"Intelligent Edge", solutions: ["Smart Embedded Vision","Edge Connectivity","Industrial Edge"]}]}/>
+- Deterministic, coherent 64-bit multi-core RISC-V CPU
+- 25K to 460K Logical Elements (LEs)
+- Up to 50% lower power than alternatives
+- Integrated DDR3/4, LPDDR3/4 controller and PHY
+ </PageBanner>
+<br />
+<SolutionsCardList solutionCategories={[{titleText:"Why PolarFire SOC FPGA?", imgUrl:"/img/pages/common/chip.svg", solutions: [{text: "Low Power", url: "https://github.com/bnkcreativelab/sample-repository/blob/main/low-power.md" },{text: "Security", url: undefined},{text: "Reliability", url: undefined}]}, {titleText:"Performance", imgUrl:"/img/pages/common/performance.svg", solutions: [{text: "DSP", url: undefined}, {text: "DSR", url: undefined}, {text: "DDR", url: undefined}, {text: "Transceivers", url: undefined}, {text: "MiV", url: undefined}, {text: "System Services", url: undefined}]},{titleText:"Intelligent Edge", imgUrl:"/img/pages/common/intelligent-edge.svg", solutions: [{text: "Smart Embedded Vision", url: undefined},{text: "Edge Connectivity", url: undefined}, {text: "Industrial Edge", url: undefined}]}]}/>
