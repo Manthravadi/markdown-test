@@ -217,7 +217,7 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
   },
 
   chooseProductsSectionCardImage: {
-    height: 400,
+    height: 200,
     width: "100%", // your current quick fix
     objectFit: "cover", // keep aspect ratio, crop overflow
     objectPosition: "center",
@@ -371,13 +371,17 @@ const useStyles = makeStyles({ name: "Products" })((theme: UxtTheme, props: any,
     overflow: "hidden",
     borderTopLeftRadius: "inherit",
     borderTopRightRadius: "inherit",
+
     // ❌ remove aspectRatio
   },
 
   productFamiliesSectionCardImage: {
-    width: "100%",
+    width: theme.spacing(25),
     height: "auto", // ⬅️ natural height
     display: "block",
+    alignSelf: "center",
+    justifySelf: "center",
+    margin: theme.spacing(4),
   },
 
   productFamiliesSectionCardTextWrapper: {

@@ -32,15 +32,17 @@ const useStyles = makeStyles<PageBannerProps>({ name: "MicrochipFPGAPageBanner" 
     flex: "1 1 auto",
     alignItems: "center",
     minWidth: "60%",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     paddingRight: theme.spacing(2),
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
   },
   bannerImage: {
-    objectFit: "cover",
+    objectFit: "contain",
     objectPosition: "top",
+    height: "min-content",
+    maxHeight: theme.spacing(50),
     // aspectRatio: "16 / 9",
     [theme.breakpoints.down("md")]: {
       //   aspectRatio: "4 / 3",
