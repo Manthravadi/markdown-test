@@ -11,6 +11,9 @@ slug: /smart-fusion-2
 ---
 import SolutionsCardList from '@components/SolutionsCardList';
 import PageBanner from '@components/PageBanner';
+import whySolutions from '@components/../config/whySolutions';
+import performanceSolutions from '@components/../config/performanceSolutions';
+import intelligentEdgeSolutions from '@components/../config/intelligentEdgeSolutions';
 
 <PageBanner imgSrc="/img/pages/smart-fusion-2/smart-fusion-2-banner.png" altText="SmartFusion 2">
 Optimize design size and power consumption using these low-density, low-power devices. SmartFusion 2 SoC FPGAs bring proven security and exceptional reliability to communications, industrial, medical, defense and aviation applications.
@@ -21,4 +24,4 @@ Optimize design size and power consumption using these low-density, low-power de
  - DDR2/3 controllers with SECDED
  </PageBanner>
 <br />
-<SolutionsCardList solutionCategories={[{titleText:"Why SmartFusion 2?", imgUrl:"/img/pages/common/chip.svg", solutions: [{text: "Low Power", url: "https://github.com/bnkcreativelab/sample-repository/blob/main/low-power.md" },{text: "Security", url: undefined},{text: "Reliability", url: undefined}]}, {titleText:"Performance", imgUrl:"/img/pages/common/performance.svg", solutions: [{text: "DSP", url: undefined}, {text: "DSR", url: undefined}, {text: "DDR", url: undefined}, {text: "Transceivers", url: undefined}, {text: "MiV", url: undefined}, {text: "System Services", url: undefined}]},{titleText:"Intelligent Edge", imgUrl:"/img/pages/common/intelligent-edge.svg", solutions: [{text: "Smart Embedded Vision", url: undefined},{text: "Edge Connectivity", url: undefined}, {text: "Industrial Edge", url: undefined}]}]}/>
+<SolutionsCardList solutionCategories={[{...whySolutions, titleText:'Why SmartFusion 2?' },performanceSolutions, intelligentEdgeSolutions]}/>
