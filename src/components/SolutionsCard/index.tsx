@@ -123,7 +123,7 @@ const useStyles = makeStyles<SolutionsCardProps>({ name: "MicrochipFPGASolutions
 
     height: "100%", // fills listArea height
     minHeight: 0,
-    width: "100%",
+    width: "max-content",
     minWidth: 0,
     maxHeight: 160,
 
@@ -166,11 +166,11 @@ const SolutionsCard = React.forwardRef<HTMLDivElement, SolutionsCardProps>((prop
             <div className={classes.listArea}>
               <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
                 {solutions.map((solution: Solution, index: number) => (
-                  <li key={index} className={classes.megaTrendsSectionListItem}>
-                    <a target="_blank" rel="noreferrer" href={solution.url}>
-                      {solution.text}
-                    </a>
-                  </li>
+                  // <li key={index} className={classes.megaTrendsSectionListItem}>
+                  <a target="_blank" rel="noreferrer" href={solution.url}>
+                    {solution.text}
+                  </a>
+                  // </li>
                 ))}
               </ul>
             </div>

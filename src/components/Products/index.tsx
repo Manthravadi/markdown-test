@@ -576,6 +576,14 @@ export default function Products() {
   const toSmartFusion2 = useBaseUrl("/smart-fusion-2");
   const toIGLOO2 = useBaseUrl("/igloo-2");
   const toRTG4FPGA = useBaseUrl("/rtg-4-fpga");
+  const toLowPowerMD = "https://github.com/bnkcreativelab/sample-repository/blob/main/low-power.md";
+  const toSmartEmbeddedVision = "https://github.com/bnkcreativelab/sample-repository/blob/main/smart-embedded-vision.md";
+  const toReliabilityMD = "https://github.com/bnkcreativelab/sample-repository/blob/main/reliability.md";
+  const toSecurityMD = "https://github.com/bnkcreativelab/sample-repository/blob/main/security.md";
+  const toCommunicationsMD = "https://github.com/bnkcreativelab/sample-repository/blob/main/communications.md";
+  const toSmartEmbeddedVisionMD = "https://github.com/bnkcreativelab/sample-repository/blob/main/smart-embedded-vision.md";
+  const toEdgeConnectivityMD = "https://github.com/bnkcreativelab/sample-repository/blob/main/edge-connectivity.md";
+  const toIndustrialEdgeMD = "https://github.com/bnkcreativelab/sample-repository/blob/main/industrial-edge.md";
 
   return (
     <div className={classes.root}>
@@ -627,29 +635,35 @@ export default function Products() {
         </div>
 
         <div className={classes.chooseProductsSectionCardWrapper}>
-          <Card variant="outlined" className={classes.chooseProductsSectionCard}>
-            <img className={classes.chooseProductsSectionCardImage} src={chooseProductsLowPowerImage} alt="Low Power" />
-            <div className={classes.chooseProductsSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Low Power</span>
-              <span className={cx(classes.subTitleColor, classes.chooseProductsSectionCardSubTitle)}>Microchip FPGAs and SoC FPGAs consume up to 50% lower total power than competitive FPGAs. Our nonvolatile process delivers FPGA families that are live at power-up with minimal in-rush current, and significantly lower leakage than SRAM-based alternatives.</span>
-            </div>
-          </Card>
+          <Link to={toLowPowerMD}>
+            <Card variant="outlined" className={classes.chooseProductsSectionCard}>
+              <img className={classes.chooseProductsSectionCardImage} src={chooseProductsLowPowerImage} alt="Low Power" />
+              <div className={classes.chooseProductsSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Low Power</span>
+                <span className={cx(classes.subTitleColor, classes.chooseProductsSectionCardSubTitle)}>Microchip FPGAs and SoC FPGAs consume up to 50% lower total power than competitive FPGAs. Our nonvolatile process delivers FPGA families that are live at power-up with minimal in-rush current, and significantly lower leakage than SRAM-based alternatives.</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.chooseProductsSectionCard}>
-            <img className={classes.chooseProductsSectionCardImage} src={chooseProductsSecurityImage} alt="Security" />
-            <div className={classes.chooseProductsSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Security</span>
-              <span className={cx(classes.subTitleColor, classes.chooseProductsSectionCardSubTitle)}>Securing the edge requires robust security. The PolarFire® family of FPGAs and SoC FPGAs is built upon the three fundamental security principles of confidentiality, integrity and authenticity.</span>
-            </div>
-          </Card>
+          <Link to={toSecurityMD}>
+            <Card variant="outlined" className={classes.chooseProductsSectionCard}>
+              <img className={classes.chooseProductsSectionCardImage} src={chooseProductsSecurityImage} alt="Security" />
+              <div className={classes.chooseProductsSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Security</span>
+                <span className={cx(classes.subTitleColor, classes.chooseProductsSectionCardSubTitle)}>Securing the edge requires robust security. The PolarFire® family of FPGAs and SoC FPGAs is built upon the three fundamental security principles of confidentiality, integrity and authenticity.</span>
+              </div>
+            </Card>
+          </Link>
 
-          <Card variant="outlined" className={classes.chooseProductsSectionCard}>
-            <img className={classes.chooseProductsSectionCardImage} src={chooseProductsReliabilityImage} alt="Reliability" />
-            <div className={classes.chooseProductsSectionCardTextWrapper}>
-              <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Reliability</span>
-              <span className={cx(classes.subTitleColor, classes.chooseProductsSectionCardSubTitle)}>Reliability - Our FPGAs address the high-reliability requirements of high-availability, safety-critical and mission-critical systems in industrial, aviation, military and communications applications.</span>
-            </div>
-          </Card>
+          <Link to={toReliabilityMD}>
+            <Card variant="outlined" className={classes.chooseProductsSectionCard}>
+              <img className={classes.chooseProductsSectionCardImage} src={chooseProductsReliabilityImage} alt="Reliability" />
+              <div className={classes.chooseProductsSectionCardTextWrapper}>
+                <span className={cx(classes.titleColor, classes.chooseProductsSectionCardTitle)}>Reliability</span>
+                <span className={cx(classes.subTitleColor, classes.chooseProductsSectionCardSubTitle)}>Reliability - Our FPGAs address the high-reliability requirements of high-availability, safety-critical and mission-critical systems in industrial, aviation, military and communications applications.</span>
+              </div>
+            </Card>
+          </Link>
         </div>
       </section>
 
@@ -772,9 +786,15 @@ export default function Products() {
                 <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
                   <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Medical-Diagnostic/Imaging</span>
                   <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
-                    <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
-                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
-                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    <Link to={toEdgeConnectivityMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
+                    </Link>
+                    <Link to={toIndustrialEdgeMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    </Link>
+                    <Link to={toSmartEmbeddedVision}>
+                      <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -788,8 +808,12 @@ export default function Products() {
                 <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
                   <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Space</span>
                   <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
-                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
-                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    <Link to={toIndustrialEdgeMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    </Link>
+                    <Link to={toSmartEmbeddedVision}>
+                      <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -803,7 +827,9 @@ export default function Products() {
                 <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
                   <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>COMMS 10-100G, Optical & 5G</span>
                   <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
-                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    <Link to={toIndustrialEdgeMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -817,9 +843,15 @@ export default function Products() {
                 <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
                   <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Aerospace & Defense</span>
                   <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
-                    <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
-                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
-                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    <Link to={toEdgeConnectivityMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
+                    </Link>
+                    <Link to={toIndustrialEdgeMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    </Link>
+                    <Link to={toSmartEmbeddedVisionMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -833,9 +865,15 @@ export default function Products() {
                 <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
                   <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Industrial</span>
                   <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
-                    <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
-                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
-                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    <Link to={toEdgeConnectivityMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
+                    </Link>
+                    <Link to={toIndustrialEdgeMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    </Link>
+                    <Link to={toSmartEmbeddedVisionMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -849,9 +887,15 @@ export default function Products() {
                 <div className={classes.megaTrendsSectionTextListItemTextWrapper}>
                   <span className={cx(classes.megaTrendsSectionListItemTitle, classes.titleColor)}>Auto</span>
                   <ul className={cx(classes.megaTrendsSectionListItemTitleContentWrapper, classes.subTitleColor)}>
-                    <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
-                    <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
-                    <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    <Link to={toEdgeConnectivityMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Edge Connectivity</li>
+                    </Link>
+                    <Link to={toIndustrialEdgeMD}>
+                      <li className={classes.megaTrendsSectionListItem}>Industrial Edge</li>
+                    </Link>
+                    <Link to={toSmartEmbeddedVision}>
+                      <li className={classes.megaTrendsSectionListItem}>Smart Embedded Vision</li>
+                    </Link>
                   </ul>
                 </div>
               </div>

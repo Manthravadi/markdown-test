@@ -11,6 +11,9 @@ slug: /igloo-2
 ---
 import SolutionsCardList from '@components/SolutionsCardList';
 import PageBanner from '@components/PageBanner';
+import whySolutions from '@components/../config/whySolutions';
+import performanceSolutions from '@components/../config/performanceSolutions';
+import intelligentEdgeSolutions from '@components/../config/intelligentEdgeSolutions';
 
 <PageBanner imgSrc="/img/pages/igloo-2/igloo-2-banner.png" altText="IGLOO2">
 Improve design integration with low-density IGLOO 2 devices that give you more resources than other FPGAs in their class. With low power, proven security and exceptional reliability, these devices are ideal for a variety of applications.
@@ -19,4 +22,5 @@ Improve design integration with low-density IGLOO 2 devices that give you more r
  - Nonvolatile and instant-on
 </PageBanner>
 <br />
-<SolutionsCardList solutionCategories={[{titleText:"Why IGLOO2?", imgUrl:"/img/pages/common/chip.svg", solutions: [{text: "Low Power", url: "https://github.com/bnkcreativelab/sample-repository/blob/main/low-power.md" },{text: "Security", url: undefined},{text: "Reliability", url: undefined}]}, {titleText:"Performance", imgUrl:"/img/pages/common/performance.svg", solutions: [{text: "DSP", url: undefined}, {text: "DSR", url: undefined}, {text: "DDR", url: undefined}, {text: "Transceivers", url: undefined}, {text: "MiV", url: undefined}, {text: "System Services", url: undefined}]},{titleText:"Intelligent Edge", imgUrl:"/img/pages/common/intelligent-edge.svg", solutions: [{text: "Smart Embedded Vision", url: undefined},{text: "Edge Connectivity", url: undefined}, {text: "Industrial Edge", url: undefined}]}]}/>
+
+<SolutionsCardList solutionCategories={[{...whySolutions, titleText:'Why IGLOO2?' },performanceSolutions, intelligentEdgeSolutions]}/>
