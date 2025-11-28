@@ -1,14 +1,3 @@
----
-id: appnote
-sidebar_position: 1
-title: 'App Note'
-pagination_prev: null
-pagination_next: null
-sidebar_label: App Note
-wrapperClassName: products-fullbleed
-full_width: true
-slug: /app-note
----
 
 Introduction
 
